@@ -1,0 +1,15 @@
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\bin\Debug\net10.0\ClinicaPro.Application.deps.json
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\bin\Debug\net10.0\ClinicaPro.Application.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\bin\Debug\net10.0\ClinicaPro.Application.pdb
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\bin\Debug\net10.0\clinicaPro.Domain.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\bin\Debug\net10.0\clinicaPro.Domain.pdb
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.csproj.AssemblyReference.cache
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.AssemblyInfoInputs.cache
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.AssemblyInfo.cs
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.csproj.CoreCompileInputs.cache
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaP.BB8CD851.Up2Date
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\refint\ClinicaPro.Application.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.pdb
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ref\ClinicaPro.Application.dll

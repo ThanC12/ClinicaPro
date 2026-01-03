@@ -1,0 +1,11 @@
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\bin\Debug\net10.0\clinicaPro.Domain.deps.json
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\bin\Debug\net10.0\clinicaPro.Domain.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\bin\Debug\net10.0\clinicaPro.Domain.pdb
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.AssemblyInfoInputs.cache
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.AssemblyInfo.cs
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.csproj.CoreCompileInputs.cache
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\refint\clinicaPro.Domain.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.pdb
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\ref\clinicaPro.Domain.dll
