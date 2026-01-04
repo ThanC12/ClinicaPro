@@ -14,6 +14,8 @@ public class AppDbContext : DbContext
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<Appointment> Appointments => Set<Appointment>();
     public DbSet<ClinicalNote> ClinicalNotes => Set<ClinicalNote>();
+    public DbSet<Doctor> Doctors => Set<Doctor>();
+
 
     // Configuración del modelo
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -139,6 +141,50 @@ public class AppDbContext : DbContext
 
             // Índice útil para historial por paciente/fecha
             entity.HasIndex(x => new { x.PatientId, x.NoteDateUtc });
+
         });
+        // DOCTORS
+        modelBuilder.Entity<Doctor>(entity =>
+        {
+            entity.ToTable("doctors");
+
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.Id).ValueGeneratedNever();
+
+            entity.Property(x => x.Identification)
+                  .IsRequired()
+                  .HasMaxLength(20);
+
+            entity.HasIndex(x => x.Identification).IsUnique();
+
+            entity.Property(x => x.FullName)
+                  .IsRequired()
+                  .HasMaxLength(150);
+
+            entity.Property(x => x.Email)
+                  .IsRequired()
+                  .HasMaxLength(150);
+
+            entity.HasIndex(x => x.Email).IsUnique();
+
+            entity.Property(x => x.Phone)
+                  .HasMaxLength(20);
+
+            entity.Property(x => x.Specialty)
+                  .IsRequired()
+                  .HasMaxLength(120);
+
+            entity.Property(x => x.Role)
+                  .IsRequired()
+                  .HasMaxLength(20);
+
+            entity.Property(x => x.IsActive)
+                  .IsRequired();
+
+            entity.Property(x => x.CreatedAtUtc)
+                  .HasColumnType("timestamp with time zone")
+                  .HasDefaultValueSql("NOW()");
+        });
+
     }
 }

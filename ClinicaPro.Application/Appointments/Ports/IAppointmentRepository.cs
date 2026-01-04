@@ -18,12 +18,17 @@ public interface IAppointmentRepository
 
     // Agenda por fecha (día)
     Task<List<Appointment>> GetByDateAsync(DateOnly date, CancellationToken ct = default);
+
+    Task<bool> HasDoctorOverlapExcludingAsync(Guid appointmentId, Guid doctorId, DateTime startUtc, DateTime endUtc, CancellationToken ct = default);
+
     Task<bool> HasOverlapExcludingAsync(
     Guid appointmentId,
     Guid patientId,
     DateTime startUtc,
     DateTime endUtc,
     CancellationToken ct = default
+
+    
 );
 
 }

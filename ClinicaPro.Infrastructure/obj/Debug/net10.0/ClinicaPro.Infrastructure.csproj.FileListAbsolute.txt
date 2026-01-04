@@ -63,3 +63,4 @@ C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Infrastructure\obj\Debug\net10.0\re
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Infrastructure\obj\Debug\net10.0\ClinicaPro.Infrastructure.pdb
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Infrastructure\obj\Debug\net10.0\ClinicaPro.Infrastructure.genruntimeconfig.cache
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Infrastructure\obj\Debug\net10.0\ref\ClinicaPro.Infrastructure.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Infrastructure\obj\Debug\net10.0\ClinicaPro.Infrastructure.sourcelink.json

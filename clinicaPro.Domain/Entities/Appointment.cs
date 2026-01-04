@@ -2,16 +2,18 @@ namespace ClinicaPro.Domain.Entities;
 
 public class Appointment
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; }
 
     public Guid PatientId { get; set; }
+    public Patient? Patient { get; set; }
 
-    public DateTime ScheduledAtUtc { get; set; }  // fecha/hora cita (UTC)
+    //  NUEVO
+    public Guid DoctorId { get; set; }
+    public Doctor? Doctor { get; set; }
 
-    public int DurationMinutes { get; set; } = 30;
-
-    public string? Reason { get; set; }          // motivo
-    public string Status { get; set; } = "Scheduled"; // Scheduled | Cancelled | Completed
-
-    public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
+    public DateTime ScheduledAtUtc { get; set; }
+    public int DurationMinutes { get; set; }
+    public string? Reason { get; set; }
+    public string Status { get; set; } = "Scheduled";
+    public DateTime CreatedAtUtc { get; set; }
 }

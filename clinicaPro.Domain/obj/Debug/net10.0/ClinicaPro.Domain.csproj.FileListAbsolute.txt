@@ -9,3 +9,4 @@ C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\refint\clinicaPro.Domain.dll
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\clinicaPro.Domain.pdb
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\ref\clinicaPro.Domain.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Domain\obj\Debug\net10.0\ClinicaPro.Domain.sourcelink.json

@@ -13,3 +13,4 @@ C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\Clini
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\refint\ClinicaPro.Application.dll
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.pdb
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ref\ClinicaPro.Application.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Application\obj\Debug\net10.0\ClinicaPro.Application.sourcelink.json

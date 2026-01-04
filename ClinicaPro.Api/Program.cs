@@ -14,8 +14,23 @@ using ClinicaPro.Application.ClinicalHistory.UseCases;
 using ClinicaPro.Infrastructure.ClinicalHistory;
 
 
+using ClinicaPro.Application.Doctors.Ports;
+using ClinicaPro.Application.Doctors.UseCases;
+using ClinicaPro.Infrastructure.Doctors;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Doctors
+builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
+builder.Services.AddScoped<CreateDoctorUseCase>();
+builder.Services.AddScoped<GetAllDoctorsUseCase>();
+builder.Services.AddScoped<GetDoctorByIdUseCase>();
+builder.Services.AddScoped<UpdateDoctorUseCase>();
+builder.Services.AddScoped<DeleteDoctorUseCase>();
+
 
 // Clinical History (UseCases)
 builder.Services.AddScoped<CreateClinicalNoteUseCase>();

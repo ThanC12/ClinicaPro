@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "clinicaPro.Domain/1.0.0": {
+      "ClinicaPro.Domain/1.0.0": {
         "runtime": {
-          "clinicaPro.Domain.dll": {}
+          "ClinicaPro.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "clinicaPro.Domain/1.0.0": {
+    "ClinicaPro.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

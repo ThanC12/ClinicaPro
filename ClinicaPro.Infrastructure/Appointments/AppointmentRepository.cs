@@ -46,9 +46,12 @@ public class AppointmentRepository : IAppointmentRepository
     public Task<bool> PatientExistsAsync(Guid patientId, CancellationToken ct = default)
         => _db.Patients.AnyAsync(p => p.Id == patientId, ct);
 
+    // NUEVO: validar que el doctor exista
+    public Task<bool> DoctorExistsAsync(Guid doctorId, CancellationToken ct = default)
+        => _db.Doctors.AnyAsync(d => d.Id == doctorId, ct);
+
     public Task<List<Appointment>> GetByDateAsync(DateOnly date, CancellationToken ct = default)
     {
-        // Agenda por día (UTC): [start, nextDay)
         var start = date.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc);
         var end = date.AddDays(1).ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc);
 
@@ -59,7 +62,7 @@ public class AppointmentRepository : IAppointmentRepository
             .ToListAsync(ct);
     }
 
-    // ✅ Choque para CREATE (sin excluir)
+    // Choque paciente (CREATE)
     public Task<bool> HasOverlapAsync(Guid patientId, DateTime startUtc, DateTime endUtc, CancellationToken ct = default)
     {
         return _db.Appointments
@@ -73,7 +76,7 @@ public class AppointmentRepository : IAppointmentRepository
             );
     }
 
-    // ✅ Choque para UPDATE (excluye la misma cita)
+    //  Choque paciente (UPDATE excluyendo)
     public Task<bool> HasOverlapExcludingAsync(
         Guid appointmentId,
         Guid patientId,
@@ -86,6 +89,40 @@ public class AppointmentRepository : IAppointmentRepository
             .AnyAsync(a =>
                 a.Id != appointmentId &&
                 a.PatientId == patientId &&
+                a.Status == "Scheduled" &&
+                a.ScheduledAtUtc < endUtc &&
+                a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
+                ct
+            );
+    }
+
+    // NUEVO: Choque doctor (CREATE)
+    public Task<bool> HasDoctorOverlapAsync(Guid doctorId, DateTime startUtc, DateTime endUtc, CancellationToken ct = default)
+    {
+        return _db.Appointments
+            .AsNoTracking()
+            .AnyAsync(a =>
+                a.DoctorId == doctorId &&
+                a.Status == "Scheduled" &&
+                a.ScheduledAtUtc < endUtc &&
+                a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
+                ct
+            );
+    }
+
+    //  NUEVO: Choque doctor (UPDATE excluyendo)
+    public Task<bool> HasDoctorOverlapExcludingAsync(
+        Guid appointmentId,
+        Guid doctorId,
+        DateTime startUtc,
+        DateTime endUtc,
+        CancellationToken ct = default)
+    {
+        return _db.Appointments
+            .AsNoTracking()
+            .AnyAsync(a =>
+                a.Id != appointmentId &&
+                a.DoctorId == doctorId &&
                 a.Status == "Scheduled" &&
                 a.ScheduledAtUtc < endUtc &&
                 a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
