@@ -186,3 +186,4 @@ C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Api\obj\Debug\net10.0\refint\Clinic
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Api\obj\Debug\net10.0\ClinicaPro.Api.pdb
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Api\obj\Debug\net10.0\ClinicaPro.Api.genruntimeconfig.cache
 C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Api\obj\Debug\net10.0\ref\ClinicaPro.Api.dll
+C:\Users\thanc\Desktop\ClinicaPro\ClinicaPro.Api\obj\Debug\net10.0\ClinicaPro.Api.sourcelink.json
