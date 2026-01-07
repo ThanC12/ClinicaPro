@@ -14,5 +14,8 @@ public class Doctor
 
     public bool IsActive { get; set; } = true;
 
+    public Guid UserId { get; set; }
+    public User? User { get; set; }
+
     public DateTime CreatedAtUtc { get; set; }
 }

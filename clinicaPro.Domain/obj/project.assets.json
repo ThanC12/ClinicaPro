@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\clinicaPro.Domain\\clinicaPro.Domain.csproj",
-      "projectName": "clinicaPro.Domain",
-      "projectPath": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\clinicaPro.Domain\\clinicaPro.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\ClinicaPro.Domain\\ClinicaPro.Domain.csproj",
+      "projectName": "ClinicaPro.Domain",
+      "projectPath": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\ClinicaPro.Domain\\ClinicaPro.Domain.csproj",
       "packagesPath": "C:\\Users\\thanc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\clinicaPro.Domain\\obj\\",
+      "outputPath": "C:\\Users\\thanc\\Desktop\\ClinicaPro\\ClinicaPro.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thanc\\AppData\\Roaming\\NuGet\\NuGet.Config"

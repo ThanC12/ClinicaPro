@@ -16,8 +16,9 @@
       },
       "clinicaPro.Domain/1.0.0": {
         "runtime": {
-          "ClinicaPro.Domain.dll": {
-            "fileVersion": "0.0.0.0"
+          "clinicaPro.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
