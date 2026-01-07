@@ -2,6 +2,8 @@ using ClinicaPro.Application.Appointments.Ports;
 using ClinicaPro.Domain.Entities;
 using ClinicaPro.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using ClinicaPro.Domain.Enums;
+
 
 namespace ClinicaPro.Infrastructure.Appointments;
 
@@ -69,7 +71,7 @@ public class AppointmentRepository : IAppointmentRepository
             .AsNoTracking()
             .AnyAsync(a =>
                 a.PatientId == patientId &&
-                a.Status == "Scheduled" &&
+                a.Status == AppointmentStatus.Scheduled &&
                 a.ScheduledAtUtc < endUtc &&
                 a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
                 ct
@@ -89,7 +91,7 @@ public class AppointmentRepository : IAppointmentRepository
             .AnyAsync(a =>
                 a.Id != appointmentId &&
                 a.PatientId == patientId &&
-                a.Status == "Scheduled" &&
+                a.Status == AppointmentStatus.Scheduled &&
                 a.ScheduledAtUtc < endUtc &&
                 a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
                 ct
@@ -103,7 +105,7 @@ public class AppointmentRepository : IAppointmentRepository
             .AsNoTracking()
             .AnyAsync(a =>
                 a.DoctorId == doctorId &&
-                a.Status == "Scheduled" &&
+                a.Status == AppointmentStatus.Scheduled &&
                 a.ScheduledAtUtc < endUtc &&
                 a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
                 ct
@@ -123,7 +125,7 @@ public class AppointmentRepository : IAppointmentRepository
             .AnyAsync(a =>
                 a.Id != appointmentId &&
                 a.DoctorId == doctorId &&
-                a.Status == "Scheduled" &&
+                a.Status == AppointmentStatus.Scheduled &&
                 a.ScheduledAtUtc < endUtc &&
                 a.ScheduledAtUtc.AddMinutes(a.DurationMinutes) > startUtc,
                 ct

@@ -1,6 +1,8 @@
 using ClinicaPro.Application.Appointments.DTOs;
 using ClinicaPro.Application.Appointments.Ports;
 using ClinicaPro.Application.Common;
+using ClinicaPro.Domain.Enums;
+
 
 namespace ClinicaPro.Application.Appointments.UseCases;
 
@@ -28,6 +30,10 @@ public class UpdateAppointmentUseCase
         if (string.IsNullOrWhiteSpace(req.Status))
             throw new ArgumentException("Status es requerido.");
 
+        if (!Enum.TryParse<AppointmentStatus>(req.Status, true, out var status))
+            throw new ArgumentException("Status inválido. Use Scheduled, Completed, Cancelled o NoShow.");
+
+       
         var start = req.ScheduledAtUtc;
         var end = start.AddMinutes(req.DurationMinutes);
 
@@ -63,7 +69,9 @@ public class UpdateAppointmentUseCase
         a.ScheduledAtUtc = req.ScheduledAtUtc;
         a.DurationMinutes = req.DurationMinutes;
         a.Reason = req.Reason ?? a.Reason; // evita pisar con null si tu DTO lo permite
-        a.Status = req.Status;
+         a.Status = status;
+
+        
 
         // 6) Guardar
         var updated = await _repo.UpdateAsync(a, ct);

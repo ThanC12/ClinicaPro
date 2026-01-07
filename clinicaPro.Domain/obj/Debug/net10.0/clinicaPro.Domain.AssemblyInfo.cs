@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ClinicaPro.Domain")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("clinicaPro.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e6c0559d7f1a0460cff3cdd0e1c9c5067bdb040")]
-[assembly: System.Reflection.AssemblyProductAttribute("ClinicaPro.Domain")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ClinicaPro.Domain")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a19f0577c946a4917f1a6da8225afcf915d80a8")]
+[assembly: System.Reflection.AssemblyProductAttribute("clinicaPro.Domain")]
+[assembly: System.Reflection.AssemblyTitleAttribute("clinicaPro.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

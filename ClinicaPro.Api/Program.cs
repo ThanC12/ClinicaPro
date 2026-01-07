@@ -19,8 +19,27 @@ using ClinicaPro.Application.Doctors.UseCases;
 using ClinicaPro.Infrastructure.Doctors;
 
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+
+using ClinicaPro.Api.Security;
+using ClinicaPro.Application.Auth.Ports;
+using ClinicaPro.Application.Auth.UseCases;
+using ClinicaPro.Infrastructure.Auth;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+//REGISTRO DE JWT
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<RegisterUserUseCase>();
+builder.Services.AddScoped<LoginUseCase>();
+builder.Services.AddSingleton<JwtTokenService>();
+
 
 
 // Doctors
@@ -70,6 +89,40 @@ builder.Services.AddScoped<GetAgendaByDateUseCase>();
 
 builder.Services.AddTransient<ClinicaPro.Api.Middlewares.ExceptionMiddleware>();
 
+//JWT
+var jwtSection = builder.Configuration.GetSection("Jwt");
+var jwtKey = jwtSection["Key"];
+
+if (string.IsNullOrWhiteSpace(jwtKey))
+    throw new InvalidOperationException("Falta configurar Jwt:Key en appsettings.json");
+
+
+var key = System.Text.Encoding.UTF8.GetBytes(jwtKey);
+
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false; // en dev
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+
+            ValidateIssuer = true,
+            ValidIssuer = jwtSection["Issuer"],
+
+            ValidateAudience = true,
+            ValidAudience = jwtSection["Audience"],
+
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 
 // Controllers
@@ -96,6 +149,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseMiddleware<ClinicaPro.Api.Middlewares.ExceptionMiddleware>();
